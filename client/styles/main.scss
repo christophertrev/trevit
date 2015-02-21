@@ -1,1 +1,107 @@
-main.scss
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$grey1: #F0F0F0;
+
+body {
+  position: absolute;
+  margin: 0 0 0 0;  
+  // padding: 0 0 0 0; 
+  font: 100% $font-stack;
+  color: $primary-color;
+
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+// #navigation li:before {
+// content: " | ";
+// }
+
+// #navigation li:first-child:before {
+// content: none;
+// }
+
+.navbar {
+    border: 1px;
+    position:absolute;
+    height: 20px;
+    width: 100%;
+    background-color: $grey1;
+    float:left;
+
+  .subReddits {
+    // position: relative;
+    margin-top: 4px;
+    // margin-bottom: 1px;
+    font-weight: 100;
+    font-size: small;
+    
+    .mySubs {
+      padding-right: 40px;
+      float:left;
+
+    }
+
+    .moreSubs {
+      float:right;
+      font-weight: bold;
+    }
+
+
+    .listSubReddits, .orderby {
+      float: left;
+      margin-top: 0px;
+      margin-left: 0px;
+      padding-top: 0px;
+      padding-left: 0px;
+      // display: inline;
+      // float: left;
+      // list-style: none;
+      // white-space:nowrap;
+    }
+    .orderby {
+      &:after {
+        content: "|";
+        padding-right: 5px;
+      }
+
+    }
+
+    .subreddit, .orderbyItem {
+      display: inline;
+      // margin-right: 10px;
+      // margin-left: 10px;
+      
+
+      &:before {
+        content: " -    ";
+      }
+
+
+      &:first-child:before {
+        content: none;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.active {
+        color: red;
+      }
+    }
+
+    .logo {
+      float:left;
+    }
+  }
+}
+
+
+
+

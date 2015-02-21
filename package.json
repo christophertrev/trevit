@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/christophertrev/trevit/issues"
   },
-  "homepage": "https://github.com/christophertrev/trevit"
+  "homepage": "https://github.com/christophertrev/trevit",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-livereload": "^3.7.0",
+    "gulp-sass": "^1.3.3",
+    "gulp-watch": "^4.1.1"
+  }
 }
