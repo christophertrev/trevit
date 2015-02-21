@@ -1,0 +1,10 @@
+.logoBar {
+  float: left;
+  margin: 20px;
+  margin-left: 0px;
+  width: 100%;
+  height: 50px;
+  background-color: #ADD8E6; }
+  .logoBar .logoImg {
+    height: 50px;
+    width: 150px; }

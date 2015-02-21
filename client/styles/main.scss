@@ -11,6 +11,12 @@ body {
 
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 
 // #navigation li:before {
 // content: " | ";
@@ -30,8 +36,8 @@ body {
 
   .subReddits {
     // position: relative;
-    margin-top: 3px;
-    margin-bottom: 1px;
+    margin-top: 4px;
+    // margin-bottom: 1px;
     font-weight: 100;
     font-size: small;
     
@@ -43,6 +49,7 @@ body {
 
     .moreSubs {
       float:right;
+      font-weight: bold;
     }
 
 
@@ -59,15 +66,16 @@ body {
     }
     .orderby {
       &:after {
-        content: "| "
+        content: "|";
+        padding-right: 5px;
       }
-      
+
     }
 
     .subreddit, .orderbyItem {
       display: inline;
-      margin-right: 10px;
-      margin-left: 10px;
+      // margin-right: 10px;
+      // margin-left: 10px;
       
 
       &:before {
@@ -93,3 +101,7 @@ body {
     }
   }
 }
+
+
+
+

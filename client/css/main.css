@@ -4,6 +4,11 @@ body {
   font: 100% Helvetica, sans-serif;
   color: #333; }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
 .navbar {
   border: 1px;
   position: absolute;
@@ -12,15 +17,15 @@ body {
   background-color: #F0F0F0;
   float: left; }
   .navbar .subReddits {
-    margin-top: 3px;
-    margin-bottom: 1px;
+    margin-top: 4px;
     font-weight: 100;
     font-size: small; }
     .navbar .subReddits .mySubs {
       padding-right: 40px;
       float: left; }
     .navbar .subReddits .moreSubs {
-      float: right; }
+      float: right;
+      font-weight: bold; }
     .navbar .subReddits .listSubReddits, .navbar .subReddits .orderby {
       float: left;
       margin-top: 0px;
@@ -28,11 +33,10 @@ body {
       padding-top: 0px;
       padding-left: 0px; }
     .navbar .subReddits .orderby:after {
-      content: "| "; }
+      content: "|";
+      padding-right: 5px; }
     .navbar .subReddits .subreddit, .navbar .subReddits .orderbyItem {
-      display: inline;
-      margin-right: 10px;
-      margin-left: 10px; }
+      display: inline; }
       .navbar .subReddits .subreddit:before, .navbar .subReddits .orderbyItem:before {
         content: " -    "; }
       .navbar .subReddits .subreddit:first-child:before, .navbar .subReddits .orderbyItem:first-child:before {
