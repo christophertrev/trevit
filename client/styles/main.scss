@@ -16,6 +16,10 @@ body {
 // content: " | ";
 // }
 
+// #navigation li:first-child:before {
+// content: none;
+// }
+
 .navbar {
     border: 1px;
     position:absolute;
@@ -53,10 +57,27 @@ body {
       // list-style: none;
       // white-space:nowrap;
     }
+    .orderby {
+      &:after {
+        content: "| "
+      }
+      
+    }
 
     .subreddit, .orderbyItem {
       display: inline;
       margin-right: 10px;
+      margin-left: 10px;
+      
+
+      &:before {
+        content: " -    ";
+      }
+
+
+      &:first-child:before {
+        content: none;
+      }
 
       &:hover {
         text-decoration: underline;

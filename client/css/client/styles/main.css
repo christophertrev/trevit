@@ -27,9 +27,16 @@ body {
       margin-left: 0px;
       padding-top: 0px;
       padding-left: 0px; }
+    .navbar .subReddits .orderby:after {
+      content: "| "; }
     .navbar .subReddits .subreddit, .navbar .subReddits .orderbyItem {
       display: inline;
-      margin-right: 10px; }
+      margin-right: 10px;
+      margin-left: 10px; }
+      .navbar .subReddits .subreddit:before, .navbar .subReddits .orderbyItem:before {
+        content: " -    "; }
+      .navbar .subReddits .subreddit:first-child:before, .navbar .subReddits .orderbyItem:first-child:before {
+        content: none; }
       .navbar .subReddits .subreddit:hover, .navbar .subReddits .orderbyItem:hover {
         text-decoration: underline; }
       .navbar .subReddits .subreddit.active, .navbar .subReddits .orderbyItem.active {
