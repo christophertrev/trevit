@@ -1,9 +1,31 @@
 .content {
   float: left;
-  margin: 0; }
+  margin: 0;
+  width: 100%; }
   .content .linkContainer {
     display: inline-block;
-    list-style-type: none; }
-    .content .linkContainer .links .linkImg {
-      height: 50px;
-      width: 50px; }
+    list-style-type: none;
+    width: 100%;
+    padding: 0 0 0 0; }
+    .content .linkContainer .links {
+      height: 100px; }
+      .content .linkContainer .links .ranking {
+        float: left;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-right: 10px; }
+      .content .linkContainer .links .linkImg {
+        float: left;
+        height: 100px;
+        width: 100px; }
+      .content .linkContainer .links .outer-content {
+        position: relative;
+        float: left;
+        width: 70%;
+        height: 100%; }
+        .content .linkContainer .links .outer-content .content-text {
+          position: absolute;
+          float: left;
+          background-color: grey;
+          top: 10px;
+          margin-left: 5px; }

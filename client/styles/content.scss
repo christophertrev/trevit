@@ -1,17 +1,51 @@
 .content {
   float:left; 
   margin: 0;
+  width: 100%;      
 
   .linkContainer{
     display: inline-block;
     list-style-type: none;
+    width: 100%;      
+    padding: 0 0 0 0;
+
+
   
     .links{
+      height: 100px;
+
+      .ranking {
+        float:left;
+        padding-top: 40px; 
+        padding-bottom: 40px;
+        margin-right: 10px; 
+
+
+      }
   
       .linkImg {
-        height: 50px;
-        width: 50px;
+        float:left;
+        height: 100px;
+        width: 100px;
       } 
+
+      .outer-content{
+        position: relative;
+        float:left;
+        width:70%;
+        height: 100%;
+
+        .content-text {
+          position: absolute;
+          float:left;
+          background-color: grey;
+          // margin-top: 50%;r
+          // width:100%;
+          top: 10px;
+          margin-left: 5px;
+        }
+        
+      }
   
     }
   
