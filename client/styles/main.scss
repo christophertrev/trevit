@@ -17,6 +17,10 @@ body {
     float:left;
   }
 
+  .moreSubs {
+    float:right;
+  }
+
 
   .listSubReddits {
     // float: left;
@@ -25,7 +29,6 @@ body {
     margin-left: 0px;
     padding-top: 0px;
     padding-left: 0px;
-    padding-right: 10px;
     // display: inline;
     // float: left;
     // list-style: none;
@@ -34,7 +37,13 @@ body {
 
   .subreddit {
     display: inline;
+    margin-right: 10px;
+
     &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
       color: red;
     }
   }

@@ -6,16 +6,20 @@ body {
 .subReddits .mySubs {
   padding-right: 10px;
   float: left; }
+.subReddits .moreSubs {
+  float: right; }
 .subReddits .listSubReddits {
   background-color: #F0F0F0;
   margin-top: 0px;
   margin-left: 0px;
   padding-top: 0px;
-  padding-left: 0px;
-  padding-right: 10px; }
+  padding-left: 0px; }
 .subReddits .subreddit {
-  display: inline; }
+  display: inline;
+  margin-right: 10px; }
   .subReddits .subreddit:hover {
+    text-decoration: underline; }
+  .subReddits .subreddit.active {
     color: red; }
 .subReddits .logo {
   float: left; }
