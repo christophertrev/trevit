@@ -1,3 +1,14 @@
 body {
+  margin: 0 0 0 0;
   font: 100% Helvetica, sans-serif;
   color: #333; }
+
+.subReddits .listSubReddits {
+  float: left;
+  background-color: #F0F0F0;
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-left: 0px; }
+.subReddits .subreddit {
+  display: inline; }

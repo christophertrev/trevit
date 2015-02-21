@@ -1,8 +1,37 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
+$grey1: #F0F0F0;
 
 body {
+  margin: 0 0 0 0;  
+  // padding: 0 0 0 0; 
   font: 100% $font-stack;
   color: $primary-color;
+
+}
+
+.subReddits {
   
+
+
+  .listSubReddits {
+    float: left;
+    background-color: $grey1;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    // display: inline;
+    // float: left;
+    // list-style: none;
+    // white-space:nowrap;
+  }
+
+  .subreddit {
+    display: inline;
+  }
+
+  .logo {
+    
+  }
 }
