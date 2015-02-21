@@ -1,6 +1,9 @@
 .content {
   float: left;
   margin: 0; }
-  .content .linkContainer .links .linkImg {
-    height: 50px;
-    width: 50px; }
+  .content .linkContainer {
+    display: inline-block;
+    list-style-type: none; }
+    .content .linkContainer .links .linkImg {
+      height: 50px;
+      width: 50px; }
