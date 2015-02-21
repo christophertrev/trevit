@@ -12,15 +12,20 @@ body {
 
 .subReddits {
   
+  .mySubs {
+    padding-right: 10px;
+    float:left;
+  }
 
 
   .listSubReddits {
-    float: left;
+    // float: left;
     background-color: $grey1;
     margin-top: 0px;
     margin-left: 0px;
     padding-top: 0px;
     padding-left: 0px;
+    padding-right: 10px;
     // display: inline;
     // float: left;
     // list-style: none;
@@ -29,9 +34,12 @@ body {
 
   .subreddit {
     display: inline;
+    &:hover {
+      color: red;
+    }
   }
 
   .logo {
-    
+    float:left;
   }
 }

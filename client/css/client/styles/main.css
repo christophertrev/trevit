@@ -3,12 +3,19 @@ body {
   font: 100% Helvetica, sans-serif;
   color: #333; }
 
+.subReddits .mySubs {
+  padding-right: 10px;
+  float: left; }
 .subReddits .listSubReddits {
-  float: left;
   background-color: #F0F0F0;
   margin-top: 0px;
   margin-left: 0px;
   padding-top: 0px;
-  padding-left: 0px; }
+  padding-left: 0px;
+  padding-right: 10px; }
 .subReddits .subreddit {
   display: inline; }
+  .subReddits .subreddit:hover {
+    color: red; }
+.subReddits .logo {
+  float: left; }
