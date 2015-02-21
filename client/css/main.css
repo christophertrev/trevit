@@ -1,25 +1,38 @@
 body {
+  position: absolute;
   margin: 0 0 0 0;
   font: 100% Helvetica, sans-serif;
   color: #333; }
 
-.subReddits .mySubs {
-  padding-right: 10px;
-  float: left; }
-.subReddits .moreSubs {
-  float: right; }
-.subReddits .listSubReddits {
+.navbar {
+  border: 1px;
+  position: absolute;
+  height: 20px;
+  width: 100%;
   background-color: #F0F0F0;
-  margin-top: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  padding-left: 0px; }
-.subReddits .subreddit {
-  display: inline;
-  margin-right: 10px; }
-  .subReddits .subreddit:hover {
-    text-decoration: underline; }
-  .subReddits .subreddit.active {
-    color: red; }
-.subReddits .logo {
   float: left; }
+  .navbar .subReddits {
+    margin-top: 3px;
+    margin-bottom: 1px;
+    font-weight: 100;
+    font-size: small; }
+    .navbar .subReddits .mySubs {
+      padding-right: 40px;
+      float: left; }
+    .navbar .subReddits .moreSubs {
+      float: right; }
+    .navbar .subReddits .listSubReddits, .navbar .subReddits .orderby {
+      float: left;
+      margin-top: 0px;
+      margin-left: 0px;
+      padding-top: 0px;
+      padding-left: 0px; }
+    .navbar .subReddits .subreddit, .navbar .subReddits .orderbyItem {
+      display: inline;
+      margin-right: 10px; }
+      .navbar .subReddits .subreddit:hover, .navbar .subReddits .orderbyItem:hover {
+        text-decoration: underline; }
+      .navbar .subReddits .subreddit.active, .navbar .subReddits .orderbyItem.active {
+        color: red; }
+    .navbar .subReddits .logo {
+      float: left; }
