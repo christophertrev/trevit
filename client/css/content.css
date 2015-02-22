@@ -1,0 +1,41 @@
+.content {
+  float: left;
+  margin: 0;
+  width: 100%; }
+  .content .linkContainer {
+    display: inline-block;
+    list-style-type: none;
+    width: 100%;
+    padding: 0 0 0 0;
+    height: 72px; }
+    .content .linkContainer .links {
+      height: 72px;
+      margin-left: 20px; }
+      .content .linkContainer .links .ranking {
+        float: left;
+        padding-top: 31px;
+        padding-bottom: 32px;
+        margin-right: 10px; }
+      .content .linkContainer .links .linkImg {
+        float: left;
+        height: 72px;
+        width: 72px; }
+      .content .linkContainer .links .outer-content {
+        position: relative;
+        float: left;
+        width: 70%;
+        height: 100%; }
+        .content .linkContainer .links .outer-content .content-text {
+          position: absolute;
+          float: left;
+          top: 7px;
+          margin-left: 5px; }
+          .content .linkContainer .links .outer-content .content-text .title-text {
+            text-decoration: none; }
+          .content .linkContainer .links .outer-content .content-text .submitionTime {
+            font-size: 10;
+            color: grey; }
+          .content .linkContainer .links .outer-content .content-text .content-share {
+            font-size: small;
+            color: grey;
+            font-weight: 900; }

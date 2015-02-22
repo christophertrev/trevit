@@ -8,7 +8,8 @@
   border: 1px solid red;
   border-top-style: none;
   border-left-style: none;
-  border-right-style: none; }
+  border-right-style: none;
+  margin-bottom: 0px; }
   .logoBar .logoImg {
     float: left;
     height: 50px;
