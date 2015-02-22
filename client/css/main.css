@@ -11,6 +11,8 @@ html, body {
 
 a {
   text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
 
 .navbar {
   border: 1px;

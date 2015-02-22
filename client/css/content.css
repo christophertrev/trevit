@@ -6,11 +6,11 @@
     display: inline-block;
     list-style-type: none;
     width: 100%;
-    padding: 0 0 0 0;
-    height: 72px; }
+    padding: 0 0 0 0; }
     .content .linkContainer .links {
       height: 72px;
-      margin-left: 20px; }
+      margin-left: 20px;
+      margin-bottom: 10px; }
       .content .linkContainer .links .ranking {
         float: left;
         padding-top: 31px;
