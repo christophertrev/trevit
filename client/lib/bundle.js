@@ -42,9 +42,73 @@ var RouteHandler = Router.RouteHandler;
 var FrontPage = React.createClass({displayName: "FrontPage",
   render: function (){
     return (
-      React.createElement("div", null, 
-      "Front Page"
-      )      
+      React.createElement("div", {className: "content"}, 
+        React.createElement("ul", {className: "linkContainer"}, 
+          React.createElement("li", {className: "links"}, 
+            React.createElement("div", {className: "ranking"}, 
+            "2" 
+            ), 
+            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
+            React.createElement("div", {className: "outer-content"}, 
+              React.createElement("div", {className: "content-text"}, 
+                React.createElement("div", {className: "content-title"}, 
+                  React.createElement("a", {className: "title-text", href: ""}, 
+                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
+                  )
+                ), 
+                React.createElement("div", {className: "submitionTime"}, 
+                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
+                ), 
+                React.createElement("div", {className: "content-share"}, 
+                    "11100 comments   share"
+                )
+              )
+            )
+          ), 
+          React.createElement("li", {className: "links"}, 
+            React.createElement("div", {className: "ranking"}, 
+            "2" 
+            ), 
+            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
+            React.createElement("div", {className: "outer-content"}, 
+              React.createElement("div", {className: "content-text"}, 
+                React.createElement("div", {className: "content-title"}, 
+                  React.createElement("a", {className: "title-text", href: ""}, 
+                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
+                  )
+                ), 
+                React.createElement("div", {className: "submitionTime"}, 
+                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
+                ), 
+                React.createElement("div", {className: "content-share"}, 
+                    "11100 comments   share"
+                )
+              )
+            )
+          ), 
+          React.createElement("li", {className: "links"}, 
+            React.createElement("div", {className: "ranking"}, 
+            "2" 
+            ), 
+            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
+            React.createElement("div", {className: "outer-content"}, 
+              React.createElement("div", {className: "content-text"}, 
+                React.createElement("div", {className: "content-title"}, 
+                  React.createElement("a", {className: "title-text", href: ""}, 
+                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
+                  )
+                ), 
+                React.createElement("div", {className: "submitionTime"}, 
+                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
+                ), 
+                React.createElement("div", {className: "content-share"}, 
+                    "11100 comments   share"
+                )
+              )
+            )
+          )
+        )
+      )    
     )
   }
 });
