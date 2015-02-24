@@ -1,15 +1,26 @@
 var express = require('express');
-var morgan = require('morgan');
+var mainRouter = require('./routes');
+
+var configApp = require('./config/configApp');
+var passport = require('./auth');
+
+
+
+
 var app = express();
 
 
-var mainRouter = require('./routes');
+
+configApp(app);
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 
-app.use(morgan('dev'));
+
+
+
 app.use(mainRouter);
-
 app.use(express.static(__dirname + '/../client'));
 
 app.get('/', function (req, res) {
