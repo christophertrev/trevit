@@ -1,4 +1,8 @@
-var gulp = require('gulp');
+var gulp = require('./gulp')([
+  'build'
+]);
+
+// var gulp = require('gulp');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
