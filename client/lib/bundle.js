@@ -121,28 +121,36 @@ var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 
+var tabItems = [
+  'Front',
+  'Hot',
+  'Rising',
+  'Magic'
 
-
+];
 
 var LogoBar = React.createClass({displayName: "LogoBar",
+
   render: function (){
+    var tabs = [];
+    tabItems.map(function(item){
+      var classes = 'choice'
+      if ( item === 'Front'){
+        classes = 'choice active';
+      }
+      tabs.push(
+        React.createElement("li", {className: classes}, 
+          item
+        )
+      )
+    })
+
     return (
       React.createElement("div", {className: "logoBar"}, 
         React.createElement("img", {className: "logoImg", src: "img/logo-nav.png"}), 
         React.createElement("div", {className: "navTab"}, 
           React.createElement("ul", {className: "tabMenu"}, 
-            React.createElement("li", {className: "choice active"}, 
-              "Front"
-            ), 
-            React.createElement("li", {className: "choice"}, 
-              "Hot"
-            ), 
-            React.createElement("li", {className: "choice"}, 
-              "Rising"
-            ), 
-            React.createElement("li", {className: "choice"}, 
-              "Magic"
-            )
+          tabs
           )
         )
       )   
