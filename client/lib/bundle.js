@@ -6,20 +6,10 @@ var RouteHandler = Router.RouteHandler;
 var DefaultRoute  = Router.DefaultRoute;
 
 //Components 
-
 var FrontPage = require('./components/FrontPage')
 var MainApp = require('./components/MainApp');
 
-
-
-// <Route handler={App}>
-//   <Route name="login" handler={Login}/>
-//   <Route name="logout" handler={Logout}/>
-//   <Route name="about" handler={About}/>
-//   <Route name="dashboard" handler={Dashboard}/>
-// </Route>
-
-
+//Routes
 var routes = (
  React.createElement(Route, {handler: MainApp}, 
   React.createElement(DefaultRoute, {handler: FrontPage})
@@ -31,10 +21,36 @@ Router.run(routes, Router.HistoryLocation,function (Handler) {
   React.render(React.createElement(Handler, null), document.getElementById('app'));
 });
 
-},{"./components/FrontPage":"/Users/christophertrev/hackTime/trevit/client/js/components/FrontPage.js","./components/MainApp":"/Users/christophertrev/hackTime/trevit/client/js/components/MainApp.js","react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/FrontPage.js":[function(require,module,exports){
+},{"./components/FrontPage":"/Users/christophertrev/hackTime/trevit/client/js/components/FrontPage.js","./components/MainApp":"/Users/christophertrev/hackTime/trevit/client/js/components/MainApp.js","react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/ContentList.js":[function(require,module,exports){
+var React = require('react');
+var LinkContent = require('./LinkContent')
+
+
+
+var ContentList = React.createClass({displayName: "ContentList",
+
+  render: function (){
+    var links = [];
+    for(var i = 0 ; i < 3; i++){
+      links.push(React.createElement(LinkContent, null))
+    }
+    return (
+      React.createElement("ul", {className: "linkContainer"}, 
+        links
+      )
+    )
+  }
+});
+
+
+
+module.exports = ContentList;
+
+},{"./LinkContent":"/Users/christophertrev/hackTime/trevit/client/js/components/LinkContent.js","react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/FrontPage.js":[function(require,module,exports){
 var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
+var ContentList = require('./ContentList')
 
 
 
@@ -43,71 +59,7 @@ var FrontPage = React.createClass({displayName: "FrontPage",
   render: function (){
     return (
       React.createElement("div", {className: "content"}, 
-        React.createElement("ul", {className: "linkContainer"}, 
-          React.createElement("li", {className: "links"}, 
-            React.createElement("div", {className: "ranking"}, 
-            "2" 
-            ), 
-            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
-            React.createElement("div", {className: "outer-content"}, 
-              React.createElement("div", {className: "content-text"}, 
-                React.createElement("div", {className: "content-title"}, 
-                  React.createElement("a", {className: "title-text", href: ""}, 
-                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
-                  )
-                ), 
-                React.createElement("div", {className: "submitionTime"}, 
-                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
-                ), 
-                React.createElement("div", {className: "content-share"}, 
-                    "11100 comments   share"
-                )
-              )
-            )
-          ), 
-          React.createElement("li", {className: "links"}, 
-            React.createElement("div", {className: "ranking"}, 
-            "2" 
-            ), 
-            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
-            React.createElement("div", {className: "outer-content"}, 
-              React.createElement("div", {className: "content-text"}, 
-                React.createElement("div", {className: "content-title"}, 
-                  React.createElement("a", {className: "title-text", href: ""}, 
-                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
-                  )
-                ), 
-                React.createElement("div", {className: "submitionTime"}, 
-                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
-                ), 
-                React.createElement("div", {className: "content-share"}, 
-                    "11100 comments   share"
-                )
-              )
-            )
-          ), 
-          React.createElement("li", {className: "links"}, 
-            React.createElement("div", {className: "ranking"}, 
-            "2" 
-            ), 
-            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
-            React.createElement("div", {className: "outer-content"}, 
-              React.createElement("div", {className: "content-text"}, 
-                React.createElement("div", {className: "content-title"}, 
-                  React.createElement("a", {className: "title-text", href: ""}, 
-                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
-                  )
-                ), 
-                React.createElement("div", {className: "submitionTime"}, 
-                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
-                ), 
-                React.createElement("div", {className: "content-share"}, 
-                    "11100 comments   share"
-                )
-              )
-            )
-          )
-        )
+        React.createElement(ContentList, null)
       )    
     )
   }
@@ -116,7 +68,56 @@ var FrontPage = React.createClass({displayName: "FrontPage",
 
 module.exports = FrontPage;
 
-},{"react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/LogoBar.js":[function(require,module,exports){
+},{"./ContentList":"/Users/christophertrev/hackTime/trevit/client/js/components/ContentList.js","react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/LinkContent.js":[function(require,module,exports){
+var React = require('react');
+
+var linkContent = {
+  ranking: 2, 
+  imgLink: 'http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg',
+  name: 'Even the meerkats at this UK zoo agree; its bloody freezing today.',
+  contentLink: '',
+  submitionTime: '2015-02-24T21:52:11.142Z',
+  numberOfComments: 1100,
+  submittedUserName: 'awesomeUser',
+  usernameLink: ''
+};
+
+
+var LinkContent = React.createClass({displayName: "LinkContent",
+  render: function (){
+    return (
+      React.createElement("li", {className: "links"}, 
+        React.createElement("div", {className: "ranking"}, 
+          linkContent.ranking
+        ), 
+        React.createElement("img", {className: "linkImg", src: linkContent.imgLink}), 
+        React.createElement("div", {className: "outer-content"}, 
+          React.createElement("div", {className: "content-text"}, 
+            React.createElement("div", {className: "content-title"}, 
+              React.createElement("a", {className: "title-text", href: linkContent.contentLink}, 
+                linkContent.name
+              )
+            ), 
+            React.createElement("div", {className: "submitionTime"}, 
+              "submitted at ", linkContent.submitionTime, " ago by ", React.createElement("span", {className: "username"}, 
+                React.createElement("a", {href: linkContent.usernameLink}, linkContent.username)
+              )
+            ), 
+            React.createElement("div", {className: "content-share"}, 
+                linkContent.numberOfComments, " comments   share"
+            )
+          )
+        )
+      )
+    )
+  }
+});
+
+
+
+module.exports = LinkContent;
+
+},{"react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/LogoBar.js":[function(require,module,exports){
 var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
@@ -126,7 +127,6 @@ var tabItems = [
   'Hot',
   'Rising',
   'Magic'
-
 ];
 
 var LogoBar = React.createClass({displayName: "LogoBar",
