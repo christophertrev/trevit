@@ -2,6 +2,14 @@
 var React = require('react');
 var Router = require('react-router');
 var Route = Router.Route
+var RouteHandler = Router.RouteHandler;
+var DefaultRoute  = Router.DefaultRoute;
+
+//Components 
+
+var FrontPage = require('./components/FrontPage')
+var MainApp = require('./components/MainApp');
+
 
 
 // <Route handler={App}>
@@ -12,14 +20,206 @@ var Route = Router.Route
 // </Route>
 
 
-// var routes = (
-//  <Route> </Route>
-// );
+var routes = (
+ React.createElement(Route, {handler: MainApp}, 
+  React.createElement(DefaultRoute, {handler: FrontPage})
+ )
+);
 
 
-// Router.run(routes, function (Handler) {
-//   React.render(<Handler/>, document.getElementById('example'));
-// });
+Router.run(routes, Router.HistoryLocation,function (Handler) {
+  React.render(React.createElement(Handler, null), document.getElementById('app'));
+});
+
+},{"./components/FrontPage":"/Users/christophertrev/hackTime/trevit/client/js/components/FrontPage.js","./components/MainApp":"/Users/christophertrev/hackTime/trevit/client/js/components/MainApp.js","react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/FrontPage.js":[function(require,module,exports){
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+
+
+
+
+var FrontPage = React.createClass({displayName: "FrontPage",
+  render: function (){
+    return (
+      React.createElement("div", {className: "content"}, 
+        React.createElement("ul", {className: "linkContainer"}, 
+          React.createElement("li", {className: "links"}, 
+            React.createElement("div", {className: "ranking"}, 
+            "2" 
+            ), 
+            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
+            React.createElement("div", {className: "outer-content"}, 
+              React.createElement("div", {className: "content-text"}, 
+                React.createElement("div", {className: "content-title"}, 
+                  React.createElement("a", {className: "title-text", href: ""}, 
+                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
+                  )
+                ), 
+                React.createElement("div", {className: "submitionTime"}, 
+                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
+                ), 
+                React.createElement("div", {className: "content-share"}, 
+                    "11100 comments   share"
+                )
+              )
+            )
+          ), 
+          React.createElement("li", {className: "links"}, 
+            React.createElement("div", {className: "ranking"}, 
+            "2" 
+            ), 
+            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
+            React.createElement("div", {className: "outer-content"}, 
+              React.createElement("div", {className: "content-text"}, 
+                React.createElement("div", {className: "content-title"}, 
+                  React.createElement("a", {className: "title-text", href: ""}, 
+                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
+                  )
+                ), 
+                React.createElement("div", {className: "submitionTime"}, 
+                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
+                ), 
+                React.createElement("div", {className: "content-share"}, 
+                    "11100 comments   share"
+                )
+              )
+            )
+          ), 
+          React.createElement("li", {className: "links"}, 
+            React.createElement("div", {className: "ranking"}, 
+            "2" 
+            ), 
+            React.createElement("img", {className: "linkImg", src: "http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg"}), 
+            React.createElement("div", {className: "outer-content"}, 
+              React.createElement("div", {className: "content-text"}, 
+                React.createElement("div", {className: "content-title"}, 
+                  React.createElement("a", {className: "title-text", href: ""}, 
+                    "Even the meerkats at this UK zoo agree; its bloody freezing today."
+                  )
+                ), 
+                React.createElement("div", {className: "submitionTime"}, 
+                  "submitted 4 hours ago by ", React.createElement("span", {className: "username"}, " ", React.createElement("a", {href: ""}, "awesomeUser"), " ")
+                ), 
+                React.createElement("div", {className: "content-share"}, 
+                    "11100 comments   share"
+                )
+              )
+            )
+          )
+        )
+      )    
+    )
+  }
+});
+
+
+module.exports = FrontPage;
+
+},{"react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/LogoBar.js":[function(require,module,exports){
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+
+
+
+
+var LogoBar = React.createClass({displayName: "LogoBar",
+  render: function (){
+    return (
+      React.createElement("div", {className: "logoBar"}, 
+        React.createElement("img", {className: "logoImg", src: "img/logo-nav.png"}), 
+        React.createElement("div", {className: "navTab"}, 
+          React.createElement("ul", {className: "tabMenu"}, 
+            React.createElement("li", {className: "choice active"}, 
+              "Front"
+            ), 
+            React.createElement("li", {className: "choice"}, 
+              "Hot"
+            ), 
+            React.createElement("li", {className: "choice"}, 
+              "Rising"
+            ), 
+            React.createElement("li", {className: "choice"}, 
+              "Magic"
+            )
+          )
+        )
+      )   
+    )
+  }
+});
+
+
+module.exports = LogoBar;
+
+},{"react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/MainApp.js":[function(require,module,exports){
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var NavBar = require('./NavBar');
+var LogoBar = require('./LogoBar');
+
+
+
+
+var MainApp = React.createClass({displayName: "MainApp",
+  render: function (){
+    return (
+      React.createElement("div", null, 
+        React.createElement(NavBar, null), 
+        React.createElement(LogoBar, null), 
+        React.createElement(RouteHandler, null)
+      )      
+    )
+  }
+});
+
+module.exports = MainApp;
+
+},{"./LogoBar":"/Users/christophertrev/hackTime/trevit/client/js/components/LogoBar.js","./NavBar":"/Users/christophertrev/hackTime/trevit/client/js/components/NavBar.js","react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/NavBar.js":[function(require,module,exports){
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+
+
+
+
+var Navbar = React.createClass({displayName: "Navbar",
+  render: function (){
+    return (
+      React.createElement("div", {className: "navbar"}, 
+      React.createElement("div", {className: "subReddits"}, 
+        React.createElement("div", {className: "mySubs"}, "MY SUBREDDITS"), 
+
+        React.createElement("div", {className: "moreSubs"}, "More>>"), 
+        React.createElement("ul", {className: "orderby"}, 
+          React.createElement("li", {className: "orderbyItem"}, "Front"), 
+          React.createElement("li", {className: "orderbyItem"}, "All"), 
+          React.createElement("li", {className: "orderbyItem"}, "Random")
+        ), 
+        React.createElement("ul", {className: "listSubReddits"}, 
+            React.createElement("li", {className: "subReddit active"}, 
+              "Front"
+            ), 
+            React.createElement("li", {className: "subReddit"}, 
+              "2ndSub"
+            ), 
+            React.createElement("li", {className: "subReddit"}, 
+              "3ndSub"
+            ), 
+            React.createElement("li", {className: "subReddit"}, 
+              "another sub"
+            )
+        )
+      )
+    )
+    )
+  }
+});
+
+
+module.exports = Navbar;
 
 },{"react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
