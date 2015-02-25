@@ -25,8 +25,6 @@ router.get('/_stats', function(req, res){
 });
 
 
-// state
-
 
 router.get('/_state', function(req, res){
   client.cluster.state(function (err, resp) {

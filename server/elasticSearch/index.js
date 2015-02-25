@@ -2,7 +2,8 @@ var elasticsearch = require('elasticsearch')
 
 var client = elasticsearch.Client({
   hosts: [
-    'http://10.131.155.165:9200/',
+    'http://10.8.32.122:9200/',
+    // 'http://10.131.155.165:9201/',
     // 'elasticsearch2:9200'
   ]
 });
@@ -18,13 +19,18 @@ client.cluster.health(function (err, resp) {
 
 
 // client.index({
-//   index: 'blog',
+//   index: 'topic',
 //   type: 'post',
-//   id: 2,
+//   // id: 2,
 //   body: {
-//     title: 'JavaScript Everywhere!',
-//     content: 'It all started when...',
-//     date: '2013-12-17'
+//     ranking: 1, 
+//     imgLink: 'http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg',
+//     name: 'TIL: life is better with JS',
+//     contentLink: '',
+//     submitionTime: '2015-02-25T22:02:23.731Z',
+//     numberOfComments: 10,
+//     submittedUserName: 'awesomeUser2',
+//     usernameLink: ''
 //   }
 // }, function (err, resp) {
 //   if (err) {
@@ -35,8 +41,9 @@ client.cluster.health(function (err, resp) {
 // });
 
 // client.search({
-//   index: 'blog',
-//   size: 1,
+//   index: 'topic',
+//   size: 50,
+//   id: 'AUvCwjmiQMlGKUpucNQ7'
 //   // body: {
 //   //   query: {
 //   //     match: {
