@@ -4,6 +4,8 @@ var mainRouter = require('./routes');
 var configApp = require('./config/configApp');
 var passport = require('./auth');
 
+var esClient = require('./elasticSearch');
+
 
 
 
