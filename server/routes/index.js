@@ -11,8 +11,10 @@ router.get('/front', function(req,res){
   client.search({
     index: 'topic',
     size: 50,
-    id: 'AUvCwjmiQMlGKUpucNQ7'
+    type: 'post',
+    sort: 'submitionTime:asc'
     // body: {
+    // sort: [{"rank" : {"order" : "asc"}}]
     //   query: {
     //     match: {
     //       title: 'JavaScript Everywhere!'

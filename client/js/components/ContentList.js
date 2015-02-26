@@ -7,17 +7,7 @@ var ContentList = React.createClass({
 
   getInitialState: function(){
     return {
-      sources: [{
-        ranking: 2, 
-        imgLink: 'http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg',
-        name: 'Even the meerkats at this UK zoo agree; its bloody freezing today.',
-        contentLink: '',
-        submitionTime: '2015-02-24T21:52:11.142Z',
-        numberOfComments: 1100,
-        submittedUserName: 'awesomeUser',
-        usernameLink: '',
-        _id: 1
-      }]
+      sources: []
     }
   },
 

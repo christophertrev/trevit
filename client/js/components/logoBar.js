@@ -27,7 +27,7 @@ var LogoBar = React.createClass({
 
     return (
       <div className='logoBar'>
-        <img className='logoImg' src="img/logo-nav.png"/>
+        <img className='logoImg' src="img/Fredditlogo-nav.png"/>
         <div className='navTab'>
           <ul className='tabMenu'>
           {tabs}

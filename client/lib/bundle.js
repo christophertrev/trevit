@@ -31,17 +31,7 @@ var ContentList = React.createClass({displayName: "ContentList",
 
   getInitialState: function(){
     return {
-      sources: [{
-        ranking: 2, 
-        imgLink: 'http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg',
-        name: 'Even the meerkats at this UK zoo agree; its bloody freezing today.',
-        contentLink: '',
-        submitionTime: '2015-02-24T21:52:11.142Z',
-        numberOfComments: 1100,
-        submittedUserName: 'awesomeUser',
-        usernameLink: '',
-        _id: 1
-      }]
+      sources: []
     }
   },
 
@@ -183,7 +173,7 @@ var LogoBar = React.createClass({displayName: "LogoBar",
 
     return (
       React.createElement("div", {className: "logoBar"}, 
-        React.createElement("img", {className: "logoImg", src: "img/logo-nav.png"}), 
+        React.createElement("img", {className: "logoImg", src: "img/Fredditlogo-nav.png"}), 
         React.createElement("div", {className: "navTab"}, 
           React.createElement("ul", {className: "tabMenu"}, 
           tabs
