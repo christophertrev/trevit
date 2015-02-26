@@ -7,7 +7,7 @@ var client = require('../elasticSearch');
 
 router.use('/auth', authRouter);
 router.use('/es',esRouter);
-router.use('/front', function(req,res){
+router.get('/front', function(req,res){
   client.search({
     index: 'topic',
     size: 50,

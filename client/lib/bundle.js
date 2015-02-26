@@ -29,11 +29,56 @@ var LinkContent = require('./LinkContent')
 
 var ContentList = React.createClass({displayName: "ContentList",
 
+  getInitialState: function(){
+    return {
+      sources: [{
+        ranking: 2, 
+        imgLink: 'http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg',
+        name: 'Even the meerkats at this UK zoo agree; its bloody freezing today.',
+        contentLink: '',
+        submitionTime: '2015-02-24T21:52:11.142Z',
+        numberOfComments: 1100,
+        submittedUserName: 'awesomeUser',
+        usernameLink: ''
+      }]
+    }
+  },
+
+  componentDidMount: function(){
+    $.ajax({
+      url: "/front"
+    }).done(function(data){
+      // console.log(data)
+      var source;
+      var l = [];
+      // console.log(data.forEach)
+      data.forEach(function(item){
+        source = item._source; 
+        source._id = item._id;
+        l.push(source);
+        //update state
+        // console.log(source)
+        // l.push(<LinkContent key = {item._id} source= {source}/>);
+        // console.log(links)
+      })
+      this.setState({
+        sources: l
+      })
+    }.bind(this))
+    
+
+  },
+
   render: function (){
+    // get the data from ajax
     var links = [];
     for(var i = 0 ; i < 3; i++){
-      links.push(React.createElement(LinkContent, null))
+      links.push(React.createElement(LinkContent, {source: this.state.sources[0]}))
     }
+    links = this.state.sources.map(function(link){
+      return (React.createElement(LinkContent, {key: link._id, source: link}))
+    });
+
     return (
       React.createElement("ul", {className: "linkContainer"}, 
         links
@@ -71,40 +116,42 @@ module.exports = FrontPage;
 },{"./ContentList":"/Users/christophertrev/hackTime/trevit/client/js/components/ContentList.js","react":"/Users/christophertrev/hackTime/trevit/node_modules/react/react.js","react-router":"/Users/christophertrev/hackTime/trevit/node_modules/react-router/lib/index.js"}],"/Users/christophertrev/hackTime/trevit/client/js/components/LinkContent.js":[function(require,module,exports){
 var React = require('react');
 
-var linkContent = {
-  ranking: 2, 
-  imgLink: 'http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg',
-  name: 'Even the meerkats at this UK zoo agree; its bloody freezing today.',
-  contentLink: '',
-  submitionTime: '2015-02-24T21:52:11.142Z',
-  numberOfComments: 1100,
-  submittedUserName: 'awesomeUser',
-  usernameLink: ''
-};
+// var linkContent = {
+//   ranking: 2, 
+//   imgLink: 'http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg',
+//   name: 'Even the meerkats at this UK zoo agree; its bloody freezing today.',
+//   contentLink: '',
+//   submitionTime: '2015-02-24T21:52:11.142Z',
+//   numberOfComments: 1100,
+//   submittedUserName: 'awesomeUser',
+//   usernameLink: ''
+// };
 
 
 var LinkContent = React.createClass({displayName: "LinkContent",
   render: function (){
+    // console.log('linkContent Props', this.props)
+    var source = this.props.source;
     return (
       React.createElement("li", {className: "links"}, 
         React.createElement("div", {className: "ranking"}, 
-          linkContent.ranking
+          source.ranking
         ), 
-        React.createElement("img", {className: "linkImg", src: linkContent.imgLink}), 
+        React.createElement("img", {className: "linkImg", src: source.imgLink}), 
         React.createElement("div", {className: "outer-content"}, 
           React.createElement("div", {className: "content-text"}, 
             React.createElement("div", {className: "content-title"}, 
-              React.createElement("a", {className: "title-text", href: linkContent.contentLink}, 
-                linkContent.name
+              React.createElement("a", {className: "title-text", href: source.contentLink}, 
+                source.name
               )
             ), 
             React.createElement("div", {className: "submitionTime"}, 
-              "submitted at ", linkContent.submitionTime, " ago by ", React.createElement("span", {className: "username"}, 
-                React.createElement("a", {href: linkContent.usernameLink}, linkContent.username)
+              "submitted at ", source.submitionTime, " ago by ", React.createElement("span", {className: "username"}, 
+                React.createElement("a", {href: source.usernameLink}, source.username)
               )
             ), 
             React.createElement("div", {className: "content-share"}, 
-                linkContent.numberOfComments, " comments   share"
+                source.numberOfComments, " comments   share"
             )
           )
         )
