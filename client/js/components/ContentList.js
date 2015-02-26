@@ -15,7 +15,8 @@ var ContentList = React.createClass({
         submitionTime: '2015-02-24T21:52:11.142Z',
         numberOfComments: 1100,
         submittedUserName: 'awesomeUser',
-        usernameLink: ''
+        usernameLink: '',
+        _id: 1
       }]
     }
   },
@@ -24,34 +25,22 @@ var ContentList = React.createClass({
     $.ajax({
       url: "/front"
     }).done(function(data){
-      // console.log(data)
       var source;
       var l = [];
-      // console.log(data.forEach)
       data.forEach(function(item){
         source = item._source; 
         source._id = item._id;
         l.push(source);
-        //update state
-        // console.log(source)
-        // l.push(<LinkContent key = {item._id} source= {source}/>);
-        // console.log(links)
       })
       this.setState({
         sources: l
       })
     }.bind(this))
-    
-
   },
 
   render: function (){
     // get the data from ajax
-    var links = [];
-    for(var i = 0 ; i < 3; i++){
-      links.push(<LinkContent source={this.state.sources[0]}/>)
-    }
-    links = this.state.sources.map(function(link){
+    var links = this.state.sources.map(function(link){
       return (<LinkContent key={link._id} source={link} />)
     });
 
